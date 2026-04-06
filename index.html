@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elysium Cali Park – Where Strength Meets Community</title>
+  <meta name="description" content="Elysium Cali Park is a premier calisthenics park offering memberships, community programs and the latest news in street workout." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header id="main-header" class="header">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a id="logo-link" href="index.html" class="logo-link" aria-label="Elysium Cali Park Home">
+        <img id="logo-img" src="assets/logo.png" alt="Elysium Cali Park Logo" class="logo-img" />
+        <span class="logo-text">
+          <span class="logo-title">ELYSIUM CALI PARK</span>
+          <span class="logo-sub">Where Strength Meets Community</span>
+        </span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav id="desktop-nav" class="desktop-nav" aria-label="Main Navigation">
+        <ul id="nav-list" class="nav-list">
+          <li><a id="nav-about" href="#about" class="nav-link">About Us</a></li>
+          <li><a id="nav-news" href="#news" class="nav-link">The News</a></li>
+          <li><a id="nav-contact" href="#contact" class="nav-link nav-link--cta">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hamburger -->
+      <button id="hamburger-btn" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+      <ul class="mobile-nav-list">
+        <li><a href="#about"      class="mobile-nav-link" id="mob-about">About Us</a></li>
+        <li><a href="#news"       class="mobile-nav-link" id="mob-news">The News</a></li>
+        <li><a href="#contact"    class="mobile-nav-link mobile-nav-link--cta" id="mob-contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="hero" class="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-content">
+      <div class="hero-badge">🏋️ India's First Calisthenics &amp; Outdoor Fitness Park</div>
+      <h1 class="hero-title">India's First<br /><span class="hero-title-accent">Calisthenics &amp;<br />Outdoor Fitness Park</span></h1>
+      <p class="hero-desc">
+        Elysium Calisthenics Park was setup with a goal to spread awareness about
+        calisthenics (bodyweight training) and provide Indian athletes an opportunity
+        to showcase their skills and talent.
+      </p>
+      <div class="hero-cta-group">
+        <a id="hero-join-btn" href="#membership" class="btn btn-primary">Join Now</a>
+        <a id="hero-explore-btn" href="#about" class="btn btn-outline">Explore the Park</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Members</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">12</span><span class="stat-label">Stations</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">7</span><span class="stat-label">Days/Week</span></div>
+      </div>
+    </div>
+    <!-- Hero right image — static -->
+    <div class="hero-img-right">
+      <img src="assets/jump.jpg" alt="Elysium athlete" />
+    </div>
+  </section>
+
+  <!-- ===== PHOTO SCROLL STRIP (below hero) ===== -->
+  <div class="hero-photo-strip-wrap">
+    <div class="hero-photo-strip">
+      <img src="assets/gallery1.jpg" alt="Elysium community" />
+      <img src="assets/gallery2.jpg" alt="Elysium training" />
+      <img src="assets/gallery3.jpg" alt="Elysium championship" />
+      <img src="assets/gallery4.jpg" alt="Elysium athletes" />
+      <img src="assets/gallery5.jpg" alt="Elysium group" />
+      <!-- duplicated for seamless loop -->
+      <img src="assets/gallery1.jpg" alt="" aria-hidden="true" />
+      <img src="assets/gallery2.jpg" alt="" aria-hidden="true" />
+      <img src="assets/gallery3.jpg" alt="" aria-hidden="true" />
+      <img src="assets/gallery4.jpg" alt="" aria-hidden="true" />
+      <img src="assets/gallery5.jpg" alt="" aria-hidden="true" />
+    </div>
+  </div>
+
+  <!-- ===== ABOUT US ===== -->
+  <section id="about" class="about-section">
+
+    <!-- Top: photo left + content right -->
+    <div class="about-top">
+      <div class="about-content">
+        <h2 class="about-heading">Who we are?</h2>
+        <p class="about-body">
+          Elysium Calisthenics Park is India's first official calisthenics and street workout park.
+          Founded in 2018, Elysium was setup with a goal to spread awareness about calisthenics
+          (bodyweight training) and provide Indian athletes an opportunity to showcase their skills and talent.
+        </p>
+        <a id="about-cta-btn" href="#contact" class="btn btn-primary">About Us</a>
+      </div>
+
+      <!-- Right: stat cards -->
+      <div class="about-stats">
+        <div class="about-stat-card">
+          <div class="about-stat-num">500+</div>
+          <div class="about-stat-label">Active Members</div>
+        </div>
+        <div class="about-stat-card">
+          <div class="about-stat-num">2018</div>
+          <div class="about-stat-label">Founded</div>
+        </div>
+        <div class="about-stat-card">
+          <div class="about-stat-num">India's <span style="font-size:1.4rem">1st</span></div>
+          <div class="about-stat-label">Calisthenics Park</div>
+        </div>
+        <div class="about-stat-card">
+          <div class="about-stat-num">7</div>
+          <div class="about-stat-label">Days a Week</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== ABOUT DETAIL (image left + text right) ===== -->
+  <section id="about-detail" class="about-detail-section">
+    <div class="about-detail-grid">
+
+      <!-- Left: photo -->
+      <div class="about-detail-img">
+        <img src="assets/pullup.jpg" alt="Elysium athlete on pull-up bar" />
+      </div>
+
+      <!-- Right: content -->
+      <div class="about-detail-content">
+        <h2 class="about-detail-heading">Opportunity For Athletes</h2>
+        <p class="about-detail-text">
+          Elysium Calisthenics Park is India's first official calisthenics and street workout park.
+          Founded in 2018, Elysium was setup with a goal to spread awareness about calisthenics
+          (bodyweight training) and provide Indian athletes an opportunity to showcase their skills
+          and talent.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== PHYSICAL TRAINING SECTION ===== -->
+  <section class="physical-section">
+    <div class="physical-grid">
+
+      <!-- Left: content -->
+      <div class="physical-content">
+        <h2 class="physical-heading">Physical Training</h2>
+        <p class="physical-text">
+          Elysium Calisthenics Park is an outdoor fitness club that offers specialized training
+          in bodyweight workouts. We provide fun and intense routines to help you get in shape,
+          stay healthy and live better!
+        </p>
+      </div>
+
+      <!-- Right: image -->
+      <div class="physical-img">
+        <img src="assets/physical.jpg" alt="Physical training at Elysium" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== MENTAL TRAINING SECTION ===== -->
+  <section class="mental-section">
+    <div class="mental-grid">
+
+      <!-- Left: image -->
+      <div class="mental-img">
+        <img src="assets/mental.jpg" alt="Mental training at Elysium" />
+      </div>
+
+      <!-- Right: content -->
+      <div class="mental-content">
+        <h2 class="mental-heading">Mental Training</h2>
+        <p class="mental-text">
+          Elysium Calisthenics Park is a fitness club with an equally important mental wellness program. 
+          It takes holistic approach to health and helps people not only look good but feel good too.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== ADVANTAGES SECTION ===== -->
+  <section id="advantages" class="section advantages-section">
+    <div class="container">
+      <div class="advantages-header">
+        <div style="text-align: center; margin-bottom: 1.5rem;">
+          <div class="section-label" style="margin-bottom: 0;">Advantages</div>
+        </div>
+        <h2 class="section-title" style="text-align: left; margin-bottom: 1rem;">Course For Any Ages</h2>
+        <p class="section-sub" style="text-align: left; max-width: 100%;">
+          Our goal is to help you build strength, burn fat, learn skills and improve health both physically and mentally. We offer park memberships and group training packages
+        </p>
+      </div>
+
+      <div class="advantages-grid">
+        <!-- Left Side Cards -->
+        <div class="adv-col">
+          <div class="adv-card">
+            <div class="adv-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5h11"/><path d="M6.5 17.5h11"/><path d="M4 4v16"/><path d="M20 4v16"/><path d="M9 9h6v6H9z"/></svg>
+            </div>
+            <h3 class="adv-card-title">Strength Training</h3>
+            <p class="adv-card-text">Improve overall body and core strength with a major focus on the fundamentals of calisthenics</p>
+          </div>
+          
+          <div class="adv-card">
+            <div class="adv-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+            </div>
+            <h3 class="adv-card-title">Freestyle and Flips</h3>
+            <p class="adv-card-text">Learn the best dynamic and statics skills under the watchful eyes of our coaches</p>
+          </div>
+        </div>
+
+        <!-- Center Image -->
+        <div class="adv-center-media">
+          <img src="assets/advantages.jpg" alt="Calisthenics Advantages" />
+        </div>
+
+        <!-- Right Side Cards -->
+        <div class="adv-col">
+          <div class="adv-card">
+            <div class="adv-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            </div>
+            <h3 class="adv-card-title">Muscle building</h3>
+            <p class="adv-card-text">Build muscle through our specialised hypertrophy workout programs</p>
+          </div>
+          
+          <div class="adv-card">
+            <div class="adv-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"></path></svg>
+            </div>
+            <h3 class="adv-card-title">Fat Loss</h3>
+            <p class="adv-card-text">Achieve your dream physique by getting rid of unnecessary fat through bodyweight movements</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS SECTION ===== -->
+  <section id="reviews" class="section reviews-section">
+    <div class="container">
+      <div class="section-label">Reviews</div>
+      <h2 class="section-title">Satisfied Students</h2>
+    </div>
+
+    <div class="reviews-marquee-wrap">
+      <div class="reviews-marquee">
+        
+        <!-- Review 1 -->
+        <div class="review-card">
+          <p class="review-body">
+            Elysium is an amazing place to learn new calisthenics moves, skills and tricks. The awesome vibes here ensure a completely satisfying workout experience. The coaches and members here are very friendly and supportive. I’ve been training with Rushikesh who is not only an excellent coach but also constantly provides me with an eclectic mix of some amazing workout routines!
+          </p>
+          <div class="review-author">
+            <div class="review-name">Arnab Chakraborty</div>
+            <div class="review-role">Student</div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card">
+          <p class="review-body">
+            As a beginner in Calisthenics, what I personally liked about Elysium Park is that every single skill/goal is scaled down to easier progressions and additional exercises that are explained in depth by their coaches.
+          </p>
+          <div class="review-author">
+            <div class="review-name">Priyesh</div>
+            <div class="review-role">Student</div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card">
+          <p class="review-body">
+            One of the most extensive open air spaces for Calisthenics. The vibe is energetic and contagious. It is one of those few places that is well set and well laid out will all required equipment. The trainers are friendly and helpful. If inclined, this place will draw you to go there and do your workouts. Recommended.
+          </p>
+          <div class="review-author">
+            <div class="review-name">Ashi Pabri</div>
+            <div class="review-role">Student</div>
+          </div>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="review-card">
+          <p class="review-body">
+            A place to grind yourself and all the negative thoughts to turn to the best version of yourself. The vibe is completely different, and there's motivation literally everywhere.
+          </p>
+          <div class="review-author">
+            <div class="review-name">Aayush Patel</div>
+            <div class="review-role">Student</div>
+          </div>
+        </div>
+
+        <!-- DUPLICATES FOR INFINITE SCROLL -->
+        <!-- Review 1 -->
+        <div class="review-card" aria-hidden="true">
+          <p class="review-body">
+            Elysium is an amazing place to learn new calisthenics moves, skills and tricks. The awesome vibes here ensure a completely satisfying workout experience. The coaches and members here are very friendly and supportive. I’ve been training with Rushikesh who is not only an excellent coach but also constantly provides me with an eclectic mix of some amazing workout routines!
+          </p>
+          <div class="review-author">
+            <div class="review-name">Arnab Chakraborty</div>
+            <div class="review-role">Student</div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card" aria-hidden="true">
+          <p class="review-body">
+            As a beginner in Calisthenics, what I personally liked about Elysium Park is that every single skill/goal is scaled down to easier progressions and additional exercises that are explained in depth by their coaches.
+          </p>
+          <div class="review-author">
+            <div class="review-name">Priyesh</div>
+            <div class="review-role">Student</div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card" aria-hidden="true">
+          <p class="review-body">
+            One of the most extensive open air spaces for Calisthenics. The vibe is energetic and contagious. It is one of those few places that is well set and well laid out will all required equipment. The trainers are friendly and helpful. If inclined, this place will draw you to go there and do your workouts. Recommended.
+          </p>
+          <div class="review-author">
+            <div class="review-name">Ashi Pabri</div>
+            <div class="review-role">Student</div>
+          </div>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="review-card" aria-hidden="true">
+          <p class="review-body">
+            A place to grind yourself and all the negative thoughts to turn to the best version of yourself. The vibe is completely different, and there's motivation literally everywhere.
+          </p>
+          <div class="review-author">
+            <div class="review-name">Aayush Patel</div>
+            <div class="review-role">Student</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== JOIN CTA SECTION ===== -->
+  <section class="section join-cta-section">
+    <div class="container">
+      <div class="join-cta-content">
+        <h2 class="section-title" style="text-align: left;">Join Our Club</h2>
+        <p class="section-sub" style="text-align: left; max-width: 600px;">
+          Elysium Calisthenics Park is an outdoor fitness club that offers specialized training in bodyweight movements
+        </p>
+        <a href="#membership" class="btn btn-primary" style="display: inline-block;">Join Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWS FEATURES SECTION ===== -->
+  <section class="section news-features-section">
+    <div class="container">
+      <div class="news-features-header text-center" style="margin-bottom: 4rem;">
+        <div class="section-label" style="margin-inline: auto;">News features</div>
+        <h2 class="section-title" style="font-size: 1.8rem; max-width: 800px; margin-inline: auto; line-height: 1.4;">Check out our newest features to know more about Elysium Calisthenics Park</h2>
+      </div>
+
+      <div class="news-features-grid">
+        <a href="https://timesofindia.indiatimes.com/life-style/spotlight/mumbai-witnesses-an-all-india-calisthenics-fitness-war/articleshow/72110232.cms" target="_blank" class="newspaper-card">
+          <img src="assets/news1.png" alt="Times of India Feature" />
+        </a>
+        <a href="https://www.mid-day.com/amp/sunday-mid-day/article/flipping-on-the-bars-at-indias-first-calisthenics-park-20074164" target="_blank" class="newspaper-card">
+          <img src="assets/news2.png" alt="Mid-Day Feature" />
+        </a>
+        <a href="https://timesofindia.indiatimes.com/life-style/health-fitness/fitness/street-style-calisthenics-takes-over-mumbai/articleshow/68815097.cms" target="_blank" class="newspaper-card">
+          <img src="assets/news3.png" alt="Hindustan Times Feature" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA SECTION ===== -->
+  <section class="section final-cta-section">
+    <div class="container">
+      <h2 class="section-title" style="font-size: 2.5rem; margin-bottom: 1.5rem; text-align: left;">Join Us Now & Get your Body in shape</h2>
+      <p class="section-sub" style="text-align: left; max-width: 100%;">
+        Elysium Calisthenics Park is an outdoor fitness club that provides state-of-the-art facilities and professional training with an emphasis on bodyweight movements.
+      </p>
+      <a href="#contact" class="btn btn-primary" style="display: inline-block;">Contact us</a>
+    </div>
+  </section>
+
+  <!-- Membership Section Removed -->
+
+  <!-- Previous News Section Removed -->
+
+  <!-- ===== LOCATIONS SECTION ===== -->
+  <section id="locations" class="section locations-section">
+    <div class="container text-center">
+      <div class="section-label" style="margin-inline: auto;">Our Locations</div>
+      <h2 class="section-title">Find a Park <span class="accent">Near You</span></h2>
+      <p class="section-sub" style="margin-inline: auto;">Three locations across Mumbai — all outdoor, all world-class.</p>
+
+      <div class="locations-grid">
+        
+        <div class="location-card">
+          <div class="loc-header">
+            <span class="loc-number">01</span>
+          </div>
+          <div class="loc-icon" style="text-align: left; margin-bottom: 1rem; font-size: 1.5rem;">📍</div>
+          <h3 class="loc-title">Elysium Calisthenics Park<br><span class="accent">Bandra</span></h3>
+          <p class="loc-address">702-88, KC Marg, Nityanand Nagar, General Arunkumar Vaidya Nagar, Bandra West, Mumbai, Maharashtra 400050</p>
+          <a href="https://www.google.com/maps/dir/12.8826863,77.5884611/Elysium+Calisthenics+Park+(Bandra),+702-88,+KC+Marg,+Nityanand+Nagar,+General+Arunkumar+Vaidya+Nagar,+Bandra+West,+Mumbai,+Maharashtra+400050/@15.9632349,72.5684861,1205055m/data=!3m1!1e3!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3be7c969aa906fbb:0xf6e929b1e2c7a3ba!2m2!1d72.8326669!2d19.0510867?entry=ttu&g_ep=EgoyMDI2MDQwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="loc-directions">GET DIRECTIONS →</a>
+        </div>
+
+        <div class="location-card loc-featured">
+          <div class="loc-header">
+            <span class="loc-number">02</span>
+            <span class="loc-badge">FLAGSHIP</span>
+          </div>
+          <div class="loc-icon" style="text-align: left; margin-bottom: 1rem; font-size: 1.5rem; color: var(--yellow);">⭐</div>
+          <h3 class="loc-title">Elysium Calisthenics Park<br><span class="accent">Malad — Mecca of Calisthenics</span></h3>
+          <p class="loc-address">Rosario Farm, Malad, Rathodi, Malad West, Mumbai, Maharashtra 400095</p>
+          <a href="https://google.com/maps/dir/12.8826882,77.5884961/Elysium+Calisthenics+Park+-+Mecca+of+Calisthencis,+Rosario+Farm,+Malad,+Rathodi,+Malad+West,+Mumbai,+Maharashtra+400095/@16.0232385,72.5601304,1204694m/data=!3m1!1e3!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3be7b6bd37c51025:0x88605031aee5bced!2m2!1d72.816266!2d19.1957056?entry=ttu&g_ep=EgoyMDI2MDQwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="loc-directions">GET DIRECTIONS →</a>
+        </div>
+
+        <div class="location-card">
+          <div class="loc-header">
+            <span class="loc-number">03</span>
+          </div>
+          <div class="loc-icon" style="text-align: left; margin-bottom: 1rem; font-size: 1.5rem;">📍</div>
+          <h3 class="loc-title">Elysium Calisthenics Park<br><span class="accent">Powai</span></h3>
+          <p class="loc-address">Hiranandani Hospital Rd, behind Hiranandani Hospital, Hariom Nagar, Hiranandani Gardens, Ramabai Ambedkar Nagar, Powai, Mumbai, Maharashtra 400076</p>
+          <a href="https://www.google.com/maps?s=web&rlz=1C5BAPC_enIN1172IN1172&lqi=Ch9lbHlzaXVtIHBhcmsgYnJhbmNoZXMgaW4gbXVtYmFpSJLjkfzGvICACFotEAAQARACGAAYARgEIh9lbHlzaXVtIHBhcmsgYnJhbmNoZXMgaW4gbXVtYmFpkgEOZml0bmVzc19jZW50ZXI&vet=12ahUKEwiFhZzD19KTAxXSTWcHHaWfE4oQ1YkKegQIJhAB..i&cs=1&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KU1ayWFJx-c7MaUXMu-bjxyq&daddr=Hiranandani+Hospital+Rd,+behind+Hiranandani+Hospital,+Hariom+Nagar,+Hiranandani+Gardens,+Ramabai+Ambedkar+Nagar,+Powai,+Mumbai,+Maharashtra+400076" target="_blank" class="loc-directions">GET DIRECTIONS →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT US ===== -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="section-label">Contact Us</div>
+      <h2 class="section-title">Get in <span class="accent">Touch</span></h2>
+      <p class="section-sub">Have questions or want to join? We'd love to hear from you.</p>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item" id="contact-location">
+            <div class="contact-item-icon">📍</div>
+            <div>
+              <strong>Location</strong>
+              <p>123 Elysium Dr, Cali Park, CA 90001</p>
+            </div>
+          </div>
+          <div class="contact-item" id="contact-hours">
+            <div class="contact-item-icon">🕐</div>
+            <div>
+              <strong>Opening Hours</strong>
+              <p>Mon – Sun: 6:00 AM – 9:00 PM</p>
+            </div>
+          </div>
+          <div class="contact-item" id="contact-email">
+            <div class="contact-item-icon">✉️</div>
+            <div>
+              <strong>Email</strong>
+              <p>hello@elysiumcalipark.com</p>
+            </div>
+          </div>
+          <div class="contact-item" id="contact-phone">
+            <div class="contact-item-icon">📞</div>
+            <div>
+              <strong>Phone</strong>
+              <p>+1 (800) 555-CALI</p>
+            </div>
+          </div>
+        </div>
+
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="form-name">Full Name</label>
+              <input type="text" id="form-name" name="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="form-email">Email</label>
+              <input type="email" id="form-email" name="email" placeholder="john@example.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="form-subject">Subject</label>
+            <select id="form-subject" name="subject">
+              <option value="">Select a topic...</option>
+              <option value="membership">Membership Enquiry</option>
+              <option value="coaching">Coaching &amp; Programs</option>
+              <option value="events">Events &amp; Competitions</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="form-message">Message</label>
+            <textarea id="form-message" name="message" rows="4" placeholder="Tell us how we can help…" required></textarea>
+          </div>
+          <button type="submit" id="form-submit-btn" class="btn btn-primary w-full">Send Message</button>
+          <p id="form-success" class="form-success hidden">✅ Message sent! We'll get back to you soon.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="main-footer" class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="Elysium Cali Park" class="footer-logo" />
+        <p>Where Strength Meets Community</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about">About Us</a>
+        <a href="#membership">Membership</a>
+        <a href="#news">The News</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Elysium Cali Park. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
