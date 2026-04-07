@@ -1,5 +1,5 @@
 /* ============================================================
-   ELYSIUM CALI PARK — Global Styles
+   ELYSIUM CALISTHENICS PARK — Global Styles
    ============================================================ */
 
 /* ── Google Fonts ── */
@@ -357,8 +357,9 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 .hero-img-right {
   position: relative;
   width: 100%;
-  max-width: 440px;
-  height: auto;
+  max-width: 640px;
+  height: 65vh;
+  min-height: 550px;
   align-self: center;
   justify-self: center;
   overflow: hidden;
@@ -369,7 +370,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 }
 .hero-img-right img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
@@ -966,11 +967,13 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   align-items: stretch;
 }
 .newspaper-card {
-  transition: transform var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition);
   display: flex;
+  border-radius: var(--radius-md);
 }
 .newspaper-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.12);
 }
 .newspaper-card img {
   width: 100%;
@@ -1063,71 +1066,77 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 /* ============================================================
    CONTACT SECTION
    ============================================================ */
-.contact-section { background: var(--gray-100); }
+.contact-section { background: var(--white); padding: 5rem 0 8rem; }
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
+  grid-template-columns: 1.1fr 1.3fr;
   gap: 4rem;
   align-items: start;
 }
-.contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
-.contact-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  background: var(--white);
-  border-radius: var(--radius-md);
-  padding: 1.25rem;
-  border: 1px solid rgba(0,0,0,.06);
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow var(--transition);
-}
-.contact-item:hover { box-shadow: var(--shadow-md); }
-.contact-item-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: .1rem; }
-.contact-item strong { font-family: var(--font-heading); font-weight: 700; color: var(--black); display: block; margin-bottom: .2rem; }
-.contact-item p { font-size: .9rem; color: var(--gray-500); }
 
-/* Form */
-.contact-form {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  padding: 2.5rem;
-  border: 1px solid rgba(0,0,0,.07);
-  box-shadow: var(--shadow-md);
+/* Contact Form Clean UI */
+.clean-form {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
 }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
-.form-group { display: flex; flex-direction: column; gap: .4rem; }
-.form-group label {
+.form-row-half {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.clean-form input,
+.clean-form textarea {
+  font-family: var(--font-body);
+  font-size: .95rem;
+  color: var(--gray-900);
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.2);
+  padding: 1.25rem 1rem;
+  outline: none;
+  transition: border-color var(--transition);
+  margin-bottom: -1px; /* Overlap borders perfectly */
+}
+.form-row-half input:first-child {
+  margin-right: -1px;
+}
+.clean-form input::placeholder,
+.clean-form textarea::placeholder {
+  color: var(--gray-500);
+}
+.clean-form input:focus,
+.clean-form textarea:focus {
+  border-color: var(--black);
+  position: relative;
+  z-index: 1;
+}
+.clean-form textarea {
+  resize: vertical;
+  min-height: 160px;
+}
+.btn-black-submit {
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  padding: 1.25rem;
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: .85rem;
-  color: var(--gray-700);
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color var(--transition);
 }
-.form-group input,
-.form-group select,
-.form-group textarea {
-  font-family: var(--font-body);
-  font-size: .92rem;
-  color: var(--gray-900);
-  background: var(--gray-100);
-  border: 1.5px solid rgba(0,0,0,.09);
-  border-radius: var(--radius-sm);
-  padding: .75rem 1rem;
-  outline: none;
-  transition: border-color var(--transition), box-shadow var(--transition);
-  resize: vertical;
+.btn-black-submit:hover { background-color: #333; }
+
+/* Contact Map & Branches Grid */
+.branches-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
 }
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: var(--green-main);
-  box-shadow: 0 0 0 3px rgba(46,125,50,.12);
-  background: var(--white);
+.branch-details li {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
 }
-.form-group textarea { min-height: 110px; }
 
 .form-success {
   text-align: center;
@@ -1138,6 +1147,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   padding: .75rem;
   border-radius: var(--radius-sm);
   border: 1px solid rgba(46,125,50,.2);
+  margin-top: 1.5rem;
 }
 .hidden { display: none; }
 
@@ -1147,18 +1157,21 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 .footer {
   background: var(--black);
   color: var(--white);
-  padding: 3rem 1.5rem;
+  padding: 4rem 1.5rem;
 }
 .footer-inner {
   max-width: 1160px;
   margin-inline: auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  text-align: center;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 3rem;
+  text-align: left;
 }
-.footer-brand { display: flex; flex-direction: column; align-items: center; gap: .75rem; }
+.footer-col-left { display: flex; flex-direction: column; flex: 1; }
+.footer-col-right { display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between; }
+
+.footer-brand { display: flex; align-items: center; gap: 1rem; }
 .footer-logo {
   width: 56px; height: 56px;
   object-fit: contain;
@@ -1169,8 +1182,8 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 .footer-links {
   display: flex;
   flex-wrap: wrap;
-  gap: .5rem 1.5rem;
-  justify-content: center;
+  gap: 1rem 1.5rem;
+  justify-content: flex-end;
 }
 .footer-links a {
   font-family: var(--font-heading);
@@ -1244,4 +1257,170 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   .form-row    { grid-template-columns: 1fr; }
   .hero-stats  { flex-direction: column; gap: 1rem; }
   .stat-divider { width: 40px; height: 1px; }
+}
+
+/* ============================================================
+   MEMBERSHIP PLANS SETTINGS
+   ============================================================ */
+
+.pricing-tables-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.pricing-block {
+  width: 100%;
+}
+
+.pricing-table-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--black);
+  text-align: left;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto; 
+  border: 1px solid var(--gray-200);
+}
+
+.membership-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  background: var(--white);
+  font-family: var(--font-body);
+}
+
+.membership-table th,
+.membership-table td {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.membership-table th {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  background: var(--gray-100);
+  color: var(--black);
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.membership-table tbody tr {
+  transition: background var(--transition);
+}
+
+.membership-table tbody tr:nth-child(even) {
+  background: var(--gray-50);
+}
+
+.membership-table tbody tr:hover {
+  background: var(--gray-100);
+}
+
+.membership-table td {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--gray-700);
+}
+
+.membership-table td:last-child {
+  font-weight: 800;
+  color: var(--black);
+}
+
+.empty-price {
+  color: var(--gray-400) !important;
+}
+
+@media (min-width: 768px) {
+  .pricing-tables-wrapper {
+    gap: 4rem;
+  }
+}
+
+/* ============================================================
+   FLOATING WHATSAPP BUTTON
+   ============================================================ */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.whatsapp-float:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.6);
+  color: #FFF;
+}
+.whatsapp-float svg {
+  width: 34px;
+  height: 34px;
+  fill: currentColor;
+}
+
+.phone-float {
+  position: fixed;
+  bottom: 105px;
+  right: 30px;
+  background-color: var(--black);
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.phone-float:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  color: #FFF;
+}
+.phone-float svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+/* ============================================================
+   BROCHURE DOWNLOAD PRINT STYLES
+   ============================================================ */
+@media print {
+  @page { margin: 1cm; size: auto; }
+  body { background: var(--white); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .header, .footer, .print-hide, .whatsapp-float, .phone-float { display: none !important; }
+  .membership-section { padding-top: 0; min-height: auto; }
+  .pricing-tables-wrapper { gap: 2rem; }
+  .pricing-table-title { font-size: 1.25rem; }
+  .membership-table th, .membership-table td { padding: 0.75rem 1rem; }
+  .membership-table th { background-color: #f1f5f9 !important; }
+  .membership-table tbody tr:nth-child(even) { background-color: #f8fafc !important; }
 }
