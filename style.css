@@ -444,7 +444,9 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
    ABOUT SECTION — clean, professional
    ============================================================ */
 .about-section {
-  background: var(--white);
+  position: relative;
+  background: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.85)), url('assets/community_bg.jpg') center/cover no-repeat;
+  background-attachment: fixed;
 }
 
 .about-top {
@@ -473,7 +475,8 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 }
 
 .about-body {
-  color: var(--gray-500);
+  color: var(--black);
+  font-weight: 500;
   font-size: 1rem;
   line-height: 1.85;
   margin-bottom: 2rem;
@@ -876,8 +879,14 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
    JOIN CTA SECTION
    ============================================================ */
 .join-cta-section {
-  background: var(--white);
+  position: relative;
+  background: linear-gradient(rgba(255, 255, 255, 0.70), rgba(255, 255, 255, 0.85)), url('assets/joinus_bg.jpg') center/cover no-repeat;
+  background-attachment: fixed;
   padding: 8rem 0;
+}
+.join-cta-section .section-sub {
+  color: var(--black);
+  font-weight: 500;
 }
 
 .join-cta-content {
@@ -987,8 +996,14 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
    FINAL CTA SECTION
    ============================================================ */
 .final-cta-section {
-  background: var(--white);
+  position: relative;
+  background: linear-gradient(rgba(255, 255, 255, 0.70), rgba(255, 255, 255, 0.85)), url('assets/champion_bg.jpg') center/cover no-repeat;
+  background-attachment: fixed;
   padding: 8rem 0;
+}
+.final-cta-section .section-sub {
+  color: var(--black);
+  font-weight: 500;
 }
 
 /* ============================================================
