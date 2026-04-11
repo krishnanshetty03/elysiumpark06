@@ -1326,6 +1326,10 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   transition: color var(--transition);
 }
 .footer-links a:hover { color: var(--green-mid); }
+.footer-contact a:hover,
+.branch-details a:hover { 
+  color: var(--green-main) !important; 
+}
 .footer-copy { font-size: .8rem; color: var(--gray-500); }
 
 /* ============================================================
