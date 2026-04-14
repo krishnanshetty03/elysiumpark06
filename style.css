@@ -1571,10 +1571,8 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 .article-card {
   display: block;
   border-radius: var(--radius-md);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
   overflow: hidden;
   transition: transform var(--transition), box-shadow var(--transition);
-  background: var(--white);
 }
 
 .article-card:hover {
@@ -1587,5 +1585,5 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   height: auto;
   display: block;
   object-fit: cover;
-  mix-blend-mode: normal; /* overrides default multiply blend mode used on news-cards */
+  mix-blend-mode: multiply;
 }
