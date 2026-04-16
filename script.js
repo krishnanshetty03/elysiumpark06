@@ -5,7 +5,7 @@ window.addEventListener('scroll', () => {
 });
 
 /* ── Hamburger / mobile drawer ── */
-const hamburger   = document.getElementById('hamburger-btn');
+const hamburger = document.getElementById('hamburger-btn');
 const mobileDrawer = document.getElementById('mobile-drawer');
 
 hamburger.addEventListener('click', () => {
@@ -27,7 +27,7 @@ mobileDrawer.querySelectorAll('.mobile-nav-link').forEach(link => {
 
 /* ── Scroll-based active nav link ── */
 const sections = document.querySelectorAll('section[id]');
-const navLinks  = document.querySelectorAll('.nav-link');
+const navLinks = document.querySelectorAll('.nav-link');
 
 const sectionObserver = new IntersectionObserver(
   (entries) => {
@@ -64,79 +64,53 @@ const fadeObserver = new IntersectionObserver(
 fadeEls.forEach(el => fadeObserver.observe(el));
 
 /* ── Contact form submit ── */
-const form       = document.getElementById('contact-form');
+const form = document.getElementById('contact-form');
 const successMsg = document.getElementById('form-success');
 
-if (form && successMsg) {
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    console.log('Form submission started');
-    
-    const btn = document.getElementById('form-submit-btn');
-    if (!btn) return;
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
 
-    const originalBtnText = btn.textContent;
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-    successMsg.classList.add('hidden');
+  const btn = document.getElementById('form-submit-btn');
+  const originalBtnText = btn.textContent;
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
 
-    const formData = new FormData(form);
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
+  const formData = new FormData(form);
+  const object = Object.fromEntries(formData);
+  const json = JSON.stringify(object);
 
-    try {
-      console.log('Sending request to /api/contact');
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: json
-      });
-      
-      console.log('Response status:', response.status);
-      
-      let result;
-      const contentType = response.headers.get("content-type");
-      if (contentType && contentType.indexOf("application/json") !== -1) {
-        result = await response.json();
-      } else {
-        const text = await response.text();
-        console.log('Non-JSON response:', text);
-        result = { message: "Server error or API route not found." };
-        if (response.status === 404) {
-          result.message = "API route not found. If testing locally, please note that /api/contact only works when deployed to Vercel or run with 'vercel dev'.";
-        }
-      }
-      
-      if (response.ok) {
-        console.log('Submission successful');
-        form.reset();
-        successMsg.textContent = "✅ Message sent! We'll get back to you.";
-        successMsg.style.color = "var(--green-dark)";
-        successMsg.style.background = "var(--green-light)";
-        successMsg.classList.remove('hidden');
-      } else {
-        console.log('Submission failed', result);
-        successMsg.textContent = "❌ " + (result.message || "Something went wrong.");
-        successMsg.style.color = "#b91c1c"; // red-700
-        successMsg.style.background = "#fee2e2"; // red-100
-        successMsg.classList.remove('hidden');
-      }
-    } catch (error) {
-      console.error('Fetch error:', error);
-      successMsg.textContent = "❌ Could not send message. Please check your connection.";
-      successMsg.style.color = "#b91c1c";
-      successMsg.style.background = "#fee2e2";
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: json
+    });
+
+    const result = await response.json();
+
+    if (response.status === 200) {
+      form.reset();
+      successMsg.textContent = "✅ Message sent! We'll get back to you.";
       successMsg.classList.remove('hidden');
-    } finally {
-      btn.textContent = originalBtnText;
-      btn.disabled = false;
-      // Auto-hide success message after 8 seconds, but keep error messages visible longer
-      if (successMsg.textContent.includes("✅")) {
-        setTimeout(() => successMsg.classList.add('hidden'), 8000);
-      }
+    } else {
+      console.log('Submission failed', result);
+      // Show detailed error if available
+      const errorDetail = result.error ? ` (Error: ${result.error})` : "";
+      successMsg.textContent = "❌ " + (result.message || "Something went wrong.") + errorDetail;
+      successMsg.style.color = "#b91c1c"; // red-700
+      successMsg.style.background = "#fee2e2"; // red-100
+      successMsg.classList.remove('hidden');
     }
-  });
-}
+  } catch (error) {
+    console.log(error);
+    successMsg.textContent = "❌ " + error.message;
+    successMsg.classList.remove('hidden');
+  } finally {
+    btn.textContent = originalBtnText;
+    btn.disabled = false;
+    setTimeout(() => successMsg.classList.add('hidden'), 5000);
+  }
+});
