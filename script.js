@@ -95,15 +95,17 @@ form.addEventListener('submit', async (e) => {
       form.reset();
       successMsg.textContent = "✅ Message sent! We'll get back to you.";
       successMsg.classList.remove('hidden');
-    } else {
-      console.log('Submission failed', result);
-      // Show detailed error if available
-      const errorDetail = result.error ? ` (Error: ${result.error})` : "";
-      successMsg.textContent = "❌ " + (result.message || "Something went wrong.") + errorDetail;
-      successMsg.style.color = "#b91c1c"; // red-700
-      successMsg.style.background = "#fee2e2"; // red-100
-      successMsg.classList.remove('hidden');
-    }
+      } else {
+        console.log('Submission failed', result);
+        // Show detailed error if available
+        const errorInfo = result.error || "Unknown Error";
+        const errorType = result.type ? ` [${result.type}]` : "";
+        successMsg.textContent = `❌ ${result.message || "Something went wrong."} (${errorInfo}${errorType})`;
+        
+        successMsg.style.color = "#b91c1c"; // red-700
+        successMsg.style.background = "#fee2e2"; // red-100
+        successMsg.classList.remove('hidden');
+      }
   } catch (error) {
     console.log(error);
     successMsg.textContent = "❌ " + error.message;

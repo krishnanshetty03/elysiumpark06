@@ -1,0 +1,14 @@
+{
+  "name": "elysium-calisthenics-park",
+  "version": "1.0.0",
+  "description": "Elysium Calisthenics Park Website",
+  "main": "script.js",
+  "engines": {
+    "node": "18.x"
+  },
+  "scripts": {
+    "start": "servor"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

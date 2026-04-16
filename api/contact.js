@@ -43,14 +43,26 @@ export default async function handler(req, res) {
       body: JSON.stringify(body)
     });
 
-    const data = await response.json();
-    return res.status(response.status).json(data);
+    const contentType = response.headers.get("content-type");
+    if (contentType && contentType.includes("application/json")) {
+        const data = await response.json();
+        return res.status(response.status).json(data);
+    } else {
+        const text = await response.text();
+        console.error('Web3Forms non-JSON response:', text);
+        return res.status(response.status).json({
+            success: false,
+            message: `Web3Forms returned an unexpected response format. Status: ${response.status}`,
+            error: text.substring(0, 200) // First 200 chars of the HTML
+        });
+    }
   } catch (error) {
     console.error('Error submitting to Web3Forms:', error);
     return res.status(500).json({ 
       success: false, 
       message: 'Internal processing error.',
-      error: error.message 
+      error: error.message || error.toString() || 'Unknown server error',
+      type: error.name || 'Error'
     });
   }
 }
