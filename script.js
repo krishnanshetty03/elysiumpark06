@@ -67,17 +67,76 @@ fadeEls.forEach(el => fadeObserver.observe(el));
 const form       = document.getElementById('contact-form');
 const successMsg = document.getElementById('form-success');
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const btn = document.getElementById('form-submit-btn');
-  btn.textContent = 'Sending…';
-  btn.disabled = true;
+if (form && successMsg) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    console.log('Form submission started');
+    
+    const btn = document.getElementById('form-submit-btn');
+    if (!btn) return;
 
-  setTimeout(() => {
-    form.reset();
-    btn.textContent = 'Send Message';
-    btn.disabled = false;
-    successMsg.classList.remove('hidden');
-    setTimeout(() => successMsg.classList.add('hidden'), 4000);
-  }, 1200);
-});
+    const originalBtnText = btn.textContent;
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    successMsg.classList.add('hidden');
+
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    try {
+      console.log('Sending request to /api/contact');
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: json
+      });
+      
+      console.log('Response status:', response.status);
+      
+      let result;
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.indexOf("application/json") !== -1) {
+        result = await response.json();
+      } else {
+        const text = await response.text();
+        console.log('Non-JSON response:', text);
+        result = { message: "Server error or API route not found." };
+        if (response.status === 404) {
+          result.message = "API route not found. If testing locally, please note that /api/contact only works when deployed to Vercel or run with 'vercel dev'.";
+        }
+      }
+      
+      if (response.ok) {
+        console.log('Submission successful');
+        form.reset();
+        successMsg.textContent = "✅ Message sent! We'll get back to you.";
+        successMsg.style.color = "var(--green-dark)";
+        successMsg.style.background = "var(--green-light)";
+        successMsg.classList.remove('hidden');
+      } else {
+        console.log('Submission failed', result);
+        successMsg.textContent = "❌ " + (result.message || "Something went wrong.");
+        successMsg.style.color = "#b91c1c"; // red-700
+        successMsg.style.background = "#fee2e2"; // red-100
+        successMsg.classList.remove('hidden');
+      }
+    } catch (error) {
+      console.error('Fetch error:', error);
+      successMsg.textContent = "❌ Could not send message. Please check your connection.";
+      successMsg.style.color = "#b91c1c";
+      successMsg.style.background = "#fee2e2";
+      successMsg.classList.remove('hidden');
+    } finally {
+      btn.textContent = originalBtnText;
+      btn.disabled = false;
+      // Auto-hide success message after 8 seconds, but keep error messages visible longer
+      if (successMsg.textContent.includes("✅")) {
+        setTimeout(() => successMsg.classList.add('hidden'), 8000);
+      }
+    }
+  });
+}
