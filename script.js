@@ -69,6 +69,11 @@ const successMsg = document.getElementById('form-success');
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
+  
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
 
   const btn = document.getElementById('form-submit-btn');
   const originalBtnText = btn.textContent;
@@ -93,7 +98,7 @@ form.addEventListener('submit', async (e) => {
 
     if (response.status === 200) {
       form.reset();
-      successMsg.textContent = "✅ Message sent! We'll get back to you.";
+      successMsg.textContent = "🏋️ Message sent! We'll get back to you.";
       successMsg.classList.remove('hidden');
       } else {
         console.log('Submission failed', result);
